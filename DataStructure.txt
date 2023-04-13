@@ -1,0 +1,121 @@
+|TINTERFACE\\MONEYFRAME\\UI-SILVERICON.BLP:0|t
+╔========================╗
+‖      GRA_RaidLogs      ‖
+╚========================╝
+GRA_RaidLogs = {
+	date(string) = {
+		["note"] = (string),
+		["startTime"] = (number),
+		["endTime"] = (number),
+		["attendances"] = {
+			playerName(string) = {"PRESENT"/"PARTIAL"/"ONLEAVE"/"ABSENT", note(string), joinTime(number), leaveTime(number), isSitOut(boolean)},
+		},
+		["details"] = {
+			-- EPGP
+			{"EP", ep, reason(string), {playerName...}},
+			{"GP", gp, itemLink, playerName, note},
+			{"PEP"/"PGP", value, reason(string), {playerName...}},
+			-- DKP
+			{"DKP_A", dkp, reason(string), {playerName...}},
+			{"DKP_C", dkp, itemLink, playerName, note},
+			{"DKP_P", value, reason(string), {playerName...}},
+			-- LC
+			{"LOOT", reason(string)/itemLink, playerName, note},
+		},
+		["bosses"] = {
+			{bossName(string), difficultyID, duration(number), firstPullTime(number), endTime(number), wipes(number),
+				{[group] = {playerName, ...},}
+			},
+		},
+	},
+}
+
+╔========================╗
+‖      GRA_Archived      ‖
+╚========================╝
+GRA_Archived = {
+	{
+		["raidTitle"] = (string),
+		["period"] = (string),
+		["roster"] = {
+			...
+		},
+		["logs"] = {
+			date(string) = {
+				...
+			},
+		}
+	},
+}
+
+╔========================╗
+‖      GRA_Roster        ‖
+╚========================╝
+GRA_Roster = {
+	["playerName"] = {
+		["class"] = (string),
+		["role"] = (string),
+		["altOf"] = (string),
+		["att30"] = {present(number), absent(number), late/leaveEarly(number), onLeave(number), ar_minutes(number)},
+		["att60"] = {present(number), absent(number), late/leaveEarly(number), onLeave(number), ar_minutes(number)},
+		["att90"] = {present(number), absent(number), late/leaveEarly(number), onLeave(number), ar_minutes(number)},
+		["attLifetime"] = {present(number), absent(number), late/leaveEarly(number), onLeave(number), ar_minutes(number), sitOut(number)},
+		["loots"] = (number),
+		["EP"] = (number),
+		["GP"] = (number),
+		["DKP_Current"] = (number),
+		["DKP_Spent"] = (number),
+		["DKP_Total"] = (number),
+	},
+}
+
+╔========================╗
+‖       GRA_Config       ‖
+╚========================╝
+GRA_Config = {
+	["raidInfo"] = {
+		["EPGP"] = {baseGP, minEP, decay},
+		["DKP"] = decay,
+		["startTime"] = "19:30",
+		["days"]={4,5,1,2},
+		["system"] = "DKP"/"EPGP"/"",
+	},
+	["lastRaidDate"] = (string),
+	["lastDecayed"] = (string),
+	["startDate"] = (string),
+	["enableLootDistr"] = (boolean),
+	["replies"] = {reply1, reply2, reply3, ...},
+	["notes"] = {note1, note2, note3, ...},
+	["revise"] = (string),
+	["arCalculationMethod"] = "A"/"B,
+}
+
+╔========================╗
+‖      GRA_Variables     ‖
+╚========================╝
+GRA_Variables = {
+	["useAccountProfile"] = (boolean),
+	["minimalMode"] = (boolean),
+	["sortKey"] = (string),
+	["columns"] = {
+		["AR_60"] = (boolean),
+		["AR_90"] = (boolean),
+		["AR_30"] = (boolean),
+		["AR_Lifetime"] = (boolean),
+		["Sit_Out"] = (boolean),
+	},
+}
+
+╔========================╗
+‖     GRA_A_Variables    ‖
+╚========================╝
+GRA_A_Variables = {
+	["minimap"] = {
+		["minimapPos"] = (number),
+		["hide"] = (boolean),
+	},
+	["size"] = (string),
+	["scaleFactor"] = (number),
+	["helpViewed"] = (boolean),
+	["useGameFont"] = (boolean),
+}

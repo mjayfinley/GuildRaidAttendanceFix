@@ -1,0 +1,16 @@
+lightweight tag 6ee71d1cd488c420ce144d3a3751e391d2c49a63 r97-release
+Author:	KevinSK <shinozakisama@live.com>
+Date:	Fri Jan 8 10:42:15 2021 +0800
+
+commit 6ee71d1cd488c420ce144d3a3751e391d2c49a63
+Author: KevinSK <shinozakisama@live.com>
+Date:   Fri Jan 8 10:42:15 2021 +0800
+
+    dkp is back
+
+commit ae3167093175b9ef71103e71340242fc0d3c04db
+Author: KevinSK <shinozakisama@live.com>
+Date:   Wed Jan 6 13:00:44 2021 +0800
+
+    Update LibGuildNotes.lua
+
